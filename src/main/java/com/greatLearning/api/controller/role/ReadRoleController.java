@@ -16,7 +16,6 @@ public class ReadRoleController {
     @Autowired
     ReadRoleServiceImpl readService;
 
-
     @GetMapping("/all")
     public List<Role> getRoles() {
         return this.readService.getALL();
