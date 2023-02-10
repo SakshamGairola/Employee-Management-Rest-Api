@@ -1,6 +1,7 @@
 package com.greatLearning.api.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,11 +11,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Builder
 @Table(name = "employees")
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "employees_generator")
+    @SequenceGenerator(name = "employees_generator", sequenceName = "employees_seq", allocationSize = 50)
     @Column(name = "empID")
     private Long empID;
 
