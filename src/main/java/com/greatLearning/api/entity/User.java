@@ -29,14 +29,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(name = "Users",
-//            joinColumns = @JoinColumn(name = "userID"),
-//            inverseJoinColumns = @JoinColumn(name = "roleID"))
-//    private List<Role> roles = new ArrayList<>();
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinTable(name = "users",
-            joinColumns = @JoinColumn(name = "userID"),
-            inverseJoinColumns = @JoinColumn(name = "roleID"))
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "userID", referencedColumnName = "userID"),
+            inverseJoinColumns = @JoinColumn(name = "roleID", referencedColumnName = "roleID"))
     private List<Role> roles = new ArrayList<>();
+
 }
