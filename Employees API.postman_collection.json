@@ -1,0 +1,620 @@
+{
+	"info": {
+		"_postman_id": "f9d8ff4c-d324-425a-abce-5f752023df39",
+		"name": "Employees API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19251230"
+	},
+	"item": [
+		{
+			"name": "Employee Requests",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Employee Create Request",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"firstName\": \"John\",\r\n\t\"lastName\": \"Wick\",\r\n\t\"empEmail\": \"jhonW@email1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/employees/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "admin",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Read",
+					"item": [
+						{
+							"name": "Get All Employees Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/get",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Employee By ID Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/get/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"get",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Employees with these ids  Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[1,2,3,4,5,6]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/employees/get",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"get"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"item": [
+						{
+							"name": "Update (PUT)Request",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"empID\": 3,\r\n\t\"firstName\": \"Fname3\",\r\n\t\"lastName\": \"Lname3\",\r\n\t\"empEmail\": \"email@email3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/employees/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update (PATCH)Request",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"empID\": 3,\r\n\t\"empEmail\": \"SOMEOTHERMAIL\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/employees/update",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "admin",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"item": [
+						{
+							"name": "Delete Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/delete/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "admin",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "FirstName Search Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/search/ME",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"search",
+										"ME"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sort",
+					"item": [
+						{
+							"name": "FirstName Sort Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/employees/sort?order=asc",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"employees",
+										"sort"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "user",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Role Requests",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Role Create Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roleName\":\"ADMIN\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/role/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"role",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Read",
+					"item": [
+						{
+							"name": "Roles Get Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/role/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"role",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User Requsts",
+			"item": [
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "User Create Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"userName\":\"user\",\r\n\t\"password\":\"user\",\r\n\t\"roles\": [\r\n\t\t{\r\n\t\t\t\"roleID\":\"2\",\r\n\t\t\t\"roleName\":\"user\"\r\n\t\t}\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Read",
+					"item": [
+						{
+							"name": "User Get Request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"userName\":\"user2\",\r\n\t\"password\":\"$2a$12$lMcq.UXFqiwaAja31gE2su5kkVPMsVDujbYXuLnxxANNRQWPZU3y6\",\r\n\t\"role\":{\r\n\t\t\"roleID\":\"2\",\r\n\t\t\"roleName\":\"USER\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/user/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080/api"
+		}
+	]
+}
